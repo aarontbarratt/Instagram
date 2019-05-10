@@ -1,4 +1,5 @@
 import logging
+import time
 import urllib.request
 
 logging.basicConfig(level=logging.DEBUG)
@@ -36,7 +37,15 @@ for line in html:
 
 # remove all duplicated in image_links
 image_links = list(dict.fromkeys(image_links))
-print(image_links)
+logging.info(image_links)
 
 for link in image_links:
-    print(link)
+    if "mp4" in link:
+        export_file_extension = "mp4"
+    elif "jpg" in link:
+        export_file_extension = "jpg"
+
+    export_full_path = export_path + "\\" + str(time.time()) + "." + export_file_extension
+
+    logging.info(" Export: " + export_full_path)
+    urllib.request.urlretrieve(image_link, export_full_path)
