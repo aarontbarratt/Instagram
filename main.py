@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 # will grab the profile image if a link to a profile is supplied
 # will pull the first image from a gallery
 # will pull
-URL = r"https://www.instagram.com/p/BxQmFKPl3tt/?utm_source=ig_web_copy_link"
+URL = r"https://www.instagram.com/p/BxPiRqaoosz/?utm_source=ig_web_copy_link"
 
 CONTENT_STUB = "content=\"https://scontent"
 response = ''
